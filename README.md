@@ -36,4 +36,5 @@ Vì dữ liệu mình craw còn quá ít nên 1 số bài thơ sẽ bị overfit
 Dự án tiếp theo mình sẽ sinh rap (oh zê)
 # 7. Tài liệu tham khảo
 https://www.philschmid.de/fine-tune-a-non-english-gpt-2-model-with-huggingface
+
 https://huggingface.co/
