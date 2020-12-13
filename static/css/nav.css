@@ -1,0 +1,6 @@
+.nav-item a:hover {
+    color: red;
+}
+.nav-item a:visited {
+    background-color: blue;
+}

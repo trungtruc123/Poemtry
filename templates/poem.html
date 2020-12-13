@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block main %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <!-- <h3>Text Classifier</h3> -->
+  <div class="title">
+    <h1> AI SINH THƠ LỤC BÁT</h1>
+  </div>
+  <h4><br /></h4>
+</head>
+    <div class="container">
+    <form method="POST" action="/">
+      <div class="form-group">
+        <label>Put word (or sentences) start:</label>
+        <p style="color: red;">Because generator peomtry 6-8, so long time : 20-30 second</p>
+        <textarea type="text" rows="1" cols="5" class="form-control"  name="rawtext" required="true", placeholder=" Ex: chiều chiều, tiên ông, cuộc sống"></textarea>
+        <br/>
+        <br/>
+        <button type="reset" class="btn btn-primary"><i class="fa fa-eraser"></i> Clear</button>
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+       
+      </div>
+    </form>
+  </div>
+  <br/>
+  <div class="container">
+    <div class="alert alert-success" role="alert">
+      <p class="input" style="color:  rgb(167, 11, 31);">Your input text:</p>
+        <div>{{raw_text}}</div>
+      <br />
+      <p class="alert-heading" style="color:rgb(167, 11, 31);">Poemtry generator :</p>
+        {% for para in results %}
+          <p style="text-align: center;">{{para}}</p>
+        {% endfor %}
+      <br />
+
+    </div>
+  </div>
+  <br />
+  <p style="color: rgb(42, 177, 15);"> Lưu ý :</p>
+  <p>Bởi vì data mình craw hơi ít nên đôi lúc những bài thơ sẽ không có vần điệu hoặc bị overfit (dẫn đến nhiều bài trùng với data training ), các bạn có thể reset lại để ra bài thơ mới. Mình mới làm cái này nên còn nhiều thiếu sốt mong các bạn thông cảm! Mình sẽ cố gắng nâng cấp sau...</p>
+  <p></p>
+  <footer class="small text-center text-muted">
+    Made by Tran Trung Truc <a href="#">Contact</a>
+  </footer>  
+{% endblock %}
